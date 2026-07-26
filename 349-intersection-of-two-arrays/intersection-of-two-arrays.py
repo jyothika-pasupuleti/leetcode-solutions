@@ -5,7 +5,10 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        l = [num for num in set(nums1) if num in set(nums2)]
+        # l = [num for num in set(nums1) if num in set(nums2)]
 
-        return l
+        # return l
+
+
+        return list(set(nums1) & set(nums2))
         
