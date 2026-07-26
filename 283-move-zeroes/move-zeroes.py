@@ -10,12 +10,20 @@ class Solution(object):
         #         nums.append(0)
         
 
-        non_zeroes = [num for num in nums if num != 0]
-        n = len(nums)
-        zeroes = n-len(non_zeroes)
+        # non_zeroes = [num for num in nums if num != 0]
 
-        result = non_zeroes + [0] * zeroes
+        # n = len(nums)
+        # zeroes = n-len(non_zeroes)
+
+        # result = non_zeroes + [0] * zeroes
+
+        # for i in range(len(nums)):
+        #     nums[i] = result[i]
+
+
+        pointer = 0
 
         for i in range(len(nums)):
-            nums[i] = result[i]
-
+            if nums[i] != 0:
+                nums[pointer],nums[i] = nums[i],nums[pointer]
+                pointer += 1
