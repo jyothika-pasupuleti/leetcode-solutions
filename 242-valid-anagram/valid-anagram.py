@@ -15,13 +15,20 @@ class Solution(object):
             return False
         
         d = {}
+        dd = {}
         for char in s:
             d[char] = d.get(char,0)+1
-
         for char in t:
-            if char not in d or d[char] == 0:
-                return False
-            
-            d[char] -= 1
+            dd[char] = dd.get(char,0)+1
+        
+        if d == dd:
+            return True
+        return False
 
-        return True
+        # for char in t:
+        #     if char not in d or d[char] == 0:
+        #         return False
+            
+        #     d[char] -= 1
+
+        # return True
