@@ -5,8 +5,7 @@ class Solution(object):
         :rtype: str
         """
 
-        if not strs:
-            return ""
+        
         prefix = strs[0]
 
         for i in range(len(prefix)):
