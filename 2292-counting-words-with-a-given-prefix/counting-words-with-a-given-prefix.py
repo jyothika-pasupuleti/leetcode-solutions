@@ -5,9 +5,17 @@ class Solution(object):
         :type pref: str
         :rtype: int
         """
+        # c = 0
+
+        # for word in words:
+        #     if word.startswith(pref):
+        #         c += 1
+        # return c
+
         c = 0
+        n = len(pref)
 
         for word in words:
-            if word.startswith(pref):
+            if word[:n] == pref:         # without using startswith() method
                 c += 1
         return c
