@@ -4,13 +4,29 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
+        # if not strs:
+        #     return ""
+        
+        # prefix = strs[0]
+
+        # for i in range(len(prefix)):
+        #     for word in strs[1:]:
+        #         if i >= len(word) or prefix[i] != word[i]:
+        #             return prefix[:i]
+
+        # return prefix        
+
+
         if not strs:
             return ""
-        
-        prefix = strs[0]
+        strs.sort()
+        print(strs)
 
-        for i in range(len(prefix)):
-            for word in strs[1:]:
-                if i >= len(word) or prefix[i] != word[i]:
-                    return prefix[:i]
-        return prefix        
+        first = strs[0]
+        last = strs[-1]
+
+        for i in range(len(first)):
+            if i >= len(last) or first[i] != last[i]:
+                return first[:i]
+        
+        return first
