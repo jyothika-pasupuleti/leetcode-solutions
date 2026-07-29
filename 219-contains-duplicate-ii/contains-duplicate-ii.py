@@ -11,7 +11,19 @@ class Solution:
             if num in d:
                 if abs(d[num]-i) <= k:
                     return True
-            d[num] = i
+            d[num] = i                       # using hash table
 
         return False
 
+
+        sw = set()                 # using hash set (sliding window)
+       
+        for i,num in enumerate(s):
+            if num in sw:
+                return True
+            sw.add(num)
+
+            if len(sw) > k:
+                sw.remove(nums[i-k])
+
+        return False                    
