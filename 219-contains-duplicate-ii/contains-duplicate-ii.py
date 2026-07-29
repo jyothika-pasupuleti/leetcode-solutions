@@ -4,7 +4,7 @@ class Solution:
         #     for j in range(i+1,len(nums)):
         #         if nums[i] == nums[j] and abs(i-j) <= k:
         #             return True
-        # return False                                  # GOT TLE
+        # return False                                  # GOT TLE WHILE SUBMISSION
                 
         d = {}
         for i,num in enumerate(nums):
