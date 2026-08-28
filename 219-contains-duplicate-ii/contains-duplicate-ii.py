@@ -16,14 +16,13 @@ class Solution:
         return False
 
 
-        sw = set()                 # using hash set (sliding window)
+        # sw = set()                 # using hash set (sliding window)
        
-        for i,num in enumerate(s):
-            if num in sw:
-                return True
-            sw.add(num)
+        # for i,num in enumerate(s):
+        #     if num in sw:  #[1,0,1,1]
+        #         return True
+        #     sw.add(num)  #[1,0]
 
-            if len(sw) > k:
-                sw.remove(nums[i-k])
-
-        return False                    
+        #     if len(sw) > k:  
+        #         sw.remove(nums[i-k])  #1-1=0  [0]
+        # return False                    
