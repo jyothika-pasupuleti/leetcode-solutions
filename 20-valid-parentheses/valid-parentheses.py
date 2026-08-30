@@ -15,7 +15,6 @@ class Solution:
         # if not stack:
         #     return True
 
-
         stack = []
         pairs = {")":"(",'}':'{',"]":"["}
         for ch in s:
