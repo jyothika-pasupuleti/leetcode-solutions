@@ -9,14 +9,18 @@ class Solution:
         #     answer.append(product)
         # return answer
 
+
         prefix = [1]*len(nums)
         suffix = [1]*len(nums)
+
         prefix_product = 1
+
         for i in range(len(nums)):
             prefix[i] = prefix_product
             prefix_product *= nums[i]
 
         suffix_product = 1
+
         for i in range(len(nums)-1,-1,-1):
             suffix[i] = suffix_product
             suffix_product *= nums[i]
@@ -24,9 +28,10 @@ class Solution:
         # print(prefix)
         # print(suffix)
         
-        answer = []
+        answer = [1]*len(nums)
+        
         for i in range(len(suffix)):
-            answer.append(prefix[i] * suffix[i])
+            answer[i] = prefix[i] * suffix[i]
 
         return answer
 
