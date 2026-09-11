@@ -10,30 +10,44 @@ class Solution:
         # return answer
 
 
-        prefix = [1]*len(nums)
-        suffix = [1]*len(nums)
+        # prefix = [1]*len(nums)
+        # suffix = [1]*len(nums)
 
-        prefix_product = 1
+        # prefix_product = 1
 
-        for i in range(len(nums)):
-            prefix[i] = prefix_product
-            prefix_product *= nums[i]
+        # for i in range(len(nums)):
+        #     prefix[i] = prefix_product               # T.C. : O(n)   
+        #     prefix_product *= nums[i]
 
-        suffix_product = 1
+        # suffix_product = 1
 
-        for i in range(len(nums)-1,-1,-1):
-            suffix[i] = suffix_product
-            suffix_product *= nums[i]
+        # for i in range(len(nums)-1,-1,-1):
+        #     suffix[i] = suffix_product
+        #     suffix_product *= nums[i]
             
-        # print(prefix)
-        # print(suffix)
+        # # print(prefix)
+        # # print(suffix)
         
-        answer = [1]*len(nums)
-        
-        for i in range(len(suffix)):
-            answer[i] = prefix[i] * suffix[i]
+        # answer = [1]*len(nums)
 
-        return answer
+        # for i in range(len(nums)):
+        #     answer[i] = prefix[i] * suffix[i]
+
+        # return answer
+
+
+
+        res = [1]*len(nums)
+        prefix = 1
+        for i in range(len(nums)):
+            res[i] = prefix
+            prefix *= nums[i]
+
+        suffix = 1
+        for i in range(len(nums)-1,-1,-1):
+            res[i] = res[i] * suffix
+            suffix *= nums[i]
+        return res
 
 
 
