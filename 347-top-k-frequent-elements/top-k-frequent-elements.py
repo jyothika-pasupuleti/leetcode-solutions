@@ -17,5 +17,5 @@ class Solution:
         for num in nums:
             d[num] = d.get(num,0) + 1
         sorted_ele = sorted(d.items(),key = lambda x:x[1],reverse = True)
-        print(sorted_ele)
+        #print(sorted_ele)
         return [sorted_ele[i][0] for i in range(k)]
