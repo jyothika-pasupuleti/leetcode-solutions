@@ -5,5 +5,20 @@ class Solution:
         #     nums.remove(num)                     # got TLE
         # return max(nums)
 
-        nums.sort(reverse=True)
-        return nums[k-1]
+        # nums.sort(reverse=True)                    # accepted
+        # return nums[k-1]
+
+        
+        heap = [] 
+        for num in nums:                        # [3,2,1,5,6,4]   [2,3] [2,3] [3,5] [5,6]  [5,6] (maintaining k largest elements)
+            heapq.heappush(heap,num)                 # Optimal
+
+            if len(heap) > k :
+                heapq.heappop(heap)
+                
+        return heap[0]                              # [5,6]
+
+
+
+
+
