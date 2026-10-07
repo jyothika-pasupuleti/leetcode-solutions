@@ -13,22 +13,50 @@ class Solution:
         #     nums1[m+i] = nums2[i]          # TC : O((m+n) log (m+n))  SC : O(1)
         # nums1.sort()
 
-        i = 0
-        j = 0
-        res = []
-        while i < m and j < n:
-            if nums1[i] < nums2[j]:
-                res.append(nums1[i])
-                i += 1
+        # i = 0
+        # j = 0
+        # res = []
+        # while i < m and j < n:
+        #     if nums1[i] < nums2[j]:
+        #         res.append(nums1[i])
+        #         i += 1
+        #     else:
+        #         res.append(nums2[j])       
+        #          # T.C: O(m+n)  S.C : O(m+n)
+        #         j += 1
+        # while i < m:
+        #     res.append(nums1[i])
+        #     i += 1
+        # while j < n:
+        #     res.append(nums2[j])
+        #     j += 1
+        # for i in range(m+n):
+        #     nums1[i] = res[i]
+
+
+        i = m - 1
+        j = n - 1
+        k = m + n - 1
+
+        while j >= 0:
+            if i >= 0 and nums1[i] > nums2[j]:
+                nums1[k] = nums1[i]
+                i -= 1
             else:
-                res.append(nums2[j])        # T.C: O(m+n)  S.C : O(m+n)
-                j += 1
-        while i < m:
-            res.append(nums1[i])
-            i += 1
-        while j < n:
-            res.append(nums2[j])
-            j += 1
-        for i in range(m+n):
-            nums1[i] = res[i]
+                nums1[k] = nums2[j]
+                j -= 1
+
+            k -= 1
+
+
+
+
+
+
+
+
+
+
+
+
             
