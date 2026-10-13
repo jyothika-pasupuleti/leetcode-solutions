@@ -9,7 +9,7 @@ class Solution:
             temp = mid
             c_days = 1
         
-            for weight in weights:            # [1,2,3,1,1], days = 4  9
+            for weight in weights:            # [1,2,3,1,1], days = 4  3
                 if weight > temp:
                     c_days += 1
                     temp = mid
