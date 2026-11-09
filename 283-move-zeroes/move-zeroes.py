@@ -1,28 +1,17 @@
-class Solution(object):
-    def moveZeroes(self, nums):
+class Solution:
+    def moveZeroes(self, nums: list[int]) -> None:
         """
-        :type nums: List[int]
-        :rtype: None Do not return anything, modify nums in-place instead.
+        Do not return anything, modify nums in-place instead.
         """
-        # for num in nums:
-        #     if num == 0:
-        #         nums.remove(0)
-        #         nums.append(0)
+        i = 0
+        j = 0
+        while j < len(nums):
+            if nums[j] != 0:
+                nums[i],nums[j] = nums[j],nums[i]
+                i += 1
+                j += 1
+            else:
+                j += 1
         
-
-        # non_zeroes = [num for num in nums if num != 0]
-
-        # n = len(nums)
-        # zeroes = n-len(non_zeroes)
-
-        # result = non_zeroes + [0] * zeroes
-
-        # for i in range(len(nums)):
-        #     nums[i] = result[i]
-
-
-        pointer = 0
-        for i in range(len(nums)):
-            if nums[i] != 0:
-                nums[pointer],nums[i] = nums[i],nums[pointer]
-                pointer += 1
+            
+            
