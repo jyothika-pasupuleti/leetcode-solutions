@@ -24,19 +24,14 @@ class Solution:
         # prev.next = None
         # return head
 
-
-        new_head  = ListNode(10)
-        new_curr = new_head
-
         curr = head
-        while curr != None:
-            if curr.val != new_curr.val:
-                new_curr.next = curr
-                new_curr = new_curr.next
-            curr = curr.next
-        new_curr.next = None
 
-        return new_head.next
+        while curr != None and curr.next != None:
+            if curr.val == curr.next.val :
+                curr.next = curr.next.next
+            else:
+                curr = curr.next
+        return head
            
 
 
