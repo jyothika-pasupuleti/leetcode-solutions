@@ -17,12 +17,18 @@ class Solution:
 
         res = length - n
         curr = head
-        while curr != None:
-            if res == 1:
-                break
-            else:
-                res -= 1
-                curr = curr.next
+        # while curr != None:
+        #     if res == 1:
+        #         break
+        #     else:
+        #         res -= 1
+        #         curr = curr.next
+
+
+        while res != 1:
+            res -= 1
+            curr = curr.next
+            
         
         curr.next = curr.next.next
         return head
