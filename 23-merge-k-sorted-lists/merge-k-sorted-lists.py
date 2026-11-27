@@ -57,8 +57,8 @@ class Solution:
         # return head
 
 
-        if len(lists) == 0:
-            return None
+        # if len(lists) == 0:
+        #     return None
 
         pq = []                                          # optimal
 
