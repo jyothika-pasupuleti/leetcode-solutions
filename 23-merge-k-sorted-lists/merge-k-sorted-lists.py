@@ -4,24 +4,62 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def mergeKLists(self, lists: list[ListNode | None]) -> ListNode | None:
-        arr = []
-        for i in range(len(lists)):
-            curr = lists[i]
-            while curr != None:
-                arr.append(curr.val)
-                curr = curr.next
-        
-        arr.sort()
+    def merge(self,l1,l2):
+        res = ListNode(-1)
+        curr = res
 
-        if len(arr) == 0:
-            return None
+        while l1 != None and l2 != None:
+            if l1.val < l2.val:
+                curr.next = l1
+                l1 = l1.next
+            else:
+                curr.next = l2
+                l2 = l2.next
 
-        head = ListNode(arr[0])
-        curr = head
-
-        for i in range(1,len(arr)):
-            curr.next = ListNode(arr[i])
             curr = curr.next
 
+        if l1 != None:
+            curr.next = l1
+        else:
+            curr.next = l2
+
+        return res.next
+
+    def mergeKLists(self, lists: list[ListNode | None]) -> ListNode | None:
+        # arr = []
+        # for i in range(len(lists)):
+        #     curr = lists[i]
+        #     while curr != None:
+        #         arr.append(curr.val)
+        #         curr = curr.next
+        
+        # arr.sort()
+
+        # if len(arr) == 0:
+        #     return None
+
+        # head = ListNode(arr[0])
+        # curr = head
+
+        # for i in range(1,len(arr)):
+        #     curr.next = ListNode(arr[i])
+        #     curr = curr.next
+
+        # return head
+
+        if len(lists) == 0:
+            return None
+
+        head = lists[0]
+
+        for i in range(1,len(lists)):
+            head = self.merge(head,lists[i])
+
+
         return head
+
+
+
+
+
+
